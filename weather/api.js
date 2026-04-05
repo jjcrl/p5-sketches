@@ -10,7 +10,7 @@ let curr_temp = null
     const { lat, lon } = await getUserLocation();
 
     const query =
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lon}/today?unitGroup=metric&include=hours%2Ccurrent&key=${API_KEY}&contentType=json`;
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lon}/today?unitGroup=metric&include=hours%2Ccurrent&key=${process.env.API_KEY}&contentType=json`;
 
     const response = await fetch(query, {
       headers: {
